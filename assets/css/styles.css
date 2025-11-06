@@ -518,7 +518,12 @@ body.light-theme {
 }
 /* ===== CERTIFICATES =====*/
 .certificate__container {
-  row-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* <-- BIAR 4 KOLOM DI MOBILE */
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .certificate__img {
@@ -537,7 +542,10 @@ body.light-theme {
 
 /* ===== PORTFOLIO =====*/
 .work__container {
-  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* dari yang sebelumnya 3 menjadi 4 */
+  gap: 1.5rem;
 }
 
 .work__filters {
@@ -906,9 +914,13 @@ body.light-theme {
     justify-content: center;
     column-gap: 3rem;
   }
-  .certificate__container {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
+    .certificate__container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* <-- BIAR 4 KOLOM DI MOBILE */
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
   }
 }
 
@@ -1009,5 +1021,25 @@ body.light-theme {
   .bd-grid {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+/* HP */
+@media screen and (max-width: 576px) {
+  .work__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 577px) and (max-width: 991px) {
+  .work__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop & Desktop */
+@media screen and (min-width: 992px) {
+  .work__container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
